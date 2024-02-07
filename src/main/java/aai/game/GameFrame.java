@@ -33,7 +33,7 @@ public class GameFrame extends JFrame implements Runnable, MouseInputListener {
         buffer = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB );
 
         Vehicle vehicle = new Vehicle(width/2, height/2, world);
-        vehicle.setBehaviour(new SeekBehaviour(vehicle));
+        vehicle.setBehaviour(new SeekBehaviour(vehicle, world.getTarget()));
         world.addEntity(vehicle);
 
         panel = new JPanel();
