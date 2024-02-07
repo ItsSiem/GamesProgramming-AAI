@@ -6,7 +6,7 @@ import aai.game.GameFrame;
 public class Launcher {
 
     public static void main(String[] args) {
-        GameFrame frame = new GameFrame("AAI", 500, 500);
+        GameFrame frame = new GameFrame("AAI", 1000, 1000);
         frame.run();
     }
 }
