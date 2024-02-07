@@ -1,5 +1,6 @@
 package aai.entity;
 
+import aai.behaviour.SeekBehaviour;
 import aai.behaviour.SteeringBehaviour;
 import aai.util.Vector2D;
 import aai.world.World;
@@ -29,7 +30,15 @@ public abstract class MovingEntity extends BaseEntity {
 
     @Override
     public void update(float delta) {
-        // TODO: implement
+        this.setBehaviour(new SeekBehaviour(this, world.getTarget()));
+
+        var steeringForce = behaviour.calculate();
+        var acceleration = steeringForce.divide(mass);
+
+        velocity = velocity.add(acceleration.multiply(delta));
+        position = position.add(velocity.multiply(delta));
+
+        world.wrapAround(position);
     }
 
     @Override
