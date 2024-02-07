@@ -39,7 +39,7 @@ public abstract class MovingEntity extends BaseEntity {
         velocity = velocity.add(acceleration.multiply(delta));
         position = position.add(velocity.multiply(delta));
 
-        world.wrapAround(position);
+        position = world.wrapAround(position);
     }
 
     @Override

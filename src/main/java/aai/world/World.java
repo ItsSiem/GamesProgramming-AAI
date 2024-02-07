@@ -45,7 +45,7 @@ public class World {
     }
 
     public Vector2D wrapAround(Vector2D position) {
-        return new Vector2D(position.x % width, position.y = position.y % height);
+        return new Vector2D((((position.x % width) + width ) % width), (((position.y % height) + height) % height));
     }
 
     public void setTarget(Vector2D target) {
