@@ -17,7 +17,7 @@ public class ArriveBehaviour extends SteeringBehaviour{
         }
         var targetCopy = new Vector2D(target.x, target.y);
 
-        var deceleration = 0.3;
+        var deceleration = 0.7;
 
         var toTarget = targetCopy.sub(entity.getPosition());
         var distance = toTarget.length();
