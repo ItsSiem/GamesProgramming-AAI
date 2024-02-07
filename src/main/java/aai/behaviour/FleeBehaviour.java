@@ -9,7 +9,8 @@ public class FleeBehaviour extends SteeringBehaviour{
     }
     @Override
     public Vector2D calculate() {
-        if (target == null) {
+        var fleeDistance = 300;
+        if (target == null || target.distance(entity.getPosition()) > fleeDistance) {
             return new Vector2D(0, 0);
         }
 

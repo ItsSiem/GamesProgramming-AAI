@@ -63,6 +63,10 @@ public class Vector2D {
         return this;
     }
 
+    public double distance(Vector2D v) {
+        return sqrt((x - v.x) * (x - v.x) + (y - v.y) * (y - v.y));
+    }
+
     @Override
     public Vector2D clone() {
         return new Vector2D(this.x, this.y);
